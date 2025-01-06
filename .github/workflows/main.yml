@@ -16,12 +16,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node.js 18
-        uses: actions/hexo-action@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install Dependencies
         run: yarn
+
+      - name: Version package
+        run: yarn changeset version
+
+      # - name: Publish packages
+      #   run: yarn changeset publish
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
