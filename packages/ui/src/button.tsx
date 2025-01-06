@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
     paddingLeft: 30,
     paddingRight: 30,
-    fontSize: 15,
+    fontSize: 16,
     backgroundColor: "#2f80ed",
   },
   text: {
