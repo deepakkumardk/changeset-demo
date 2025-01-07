@@ -1,14 +1,23 @@
 name: Release
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types:
+      - closed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    # release:
+    permissions:
+      contents: write # to create release
+      issues: write # to post issue comments
+      pull-requests: write # to create pull request
+
     name: Release
     runs-on: ubuntu-latest
     steps:
