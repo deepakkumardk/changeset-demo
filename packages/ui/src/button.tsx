@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   button: {
     maxWidth: 210,
     textAlign: "center",
-    borderRadius: 8,
+    borderRadius: 12,
     paddingTop: 14,
     paddingBottom: 14,
     paddingLeft: 30,
