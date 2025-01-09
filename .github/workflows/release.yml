@@ -65,7 +65,7 @@ jobs:
         with:
           commitMessage: "build(release): v${{env.NEW_VERSION}}"
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # - name: Check for changesets
