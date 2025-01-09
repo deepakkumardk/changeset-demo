@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.4
+
+### Patch Changes
+
+- [#14](https://github.com/deepakkumardk/changeset-demo/pull/14) [`bcba024`](https://github.com/deepakkumardk/changeset-demo/commit/bcba02485d6fbb8ecd654afcfda7706fb49a5c91) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button font weight to bold
+
 ## 0.0.3
 
 ### Patch Changes
