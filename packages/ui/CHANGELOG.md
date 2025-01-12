@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.5
+
+### Patch Changes
+
+- [#15](https://github.com/deepakkumardk/changeset-demo/pull/15) [`2054955`](https://github.com/deepakkumardk/changeset-demo/commit/20549558f9155cbacef6c74b1bc4f439c1684beb) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Button update padding
+
 ## 0.0.4
 
 ### Patch Changes
