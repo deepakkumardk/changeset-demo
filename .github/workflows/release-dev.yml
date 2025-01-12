@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - dev
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -42,27 +42,27 @@ jobs:
           echo "NEW_VERSION=$(jq -r '.releases[0].newVersion' release.json)" >> "$GITHUB_ENV"
           rm release.json
 
-      # - name: Create Release Pull Request or Publish to npm
-      #   id: changesets
-      #   uses: changesets/action@v1
-      #   with:
-      #     # This expects you to have a script called release which does a build for your packages and calls changeset publish
-      #     version: yarn version-packages
-      #     publish: yarn publish-packages
-      #     title: "v${{env.NEW_VERSION}} Release [ci]"
-      #     commit: "build(release):  v${{env.NEW_VERSION}}"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Run Auto Publish
-        id: autopublish
-        uses: jamilomar/autopublish-changesets-action@v0.0.11
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
         with:
-          commitMessage: "build(release): v${{env.NEW_VERSION}}"
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          version: yarn version-packages
+          publish: yarn publish-packages
+          title: "v${{env.NEW_VERSION}} Release [ci]"
+          commit: "build(release):  v${{env.NEW_VERSION}}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Run Auto Publish
+      #   id: autopublish
+      #   uses: jamilomar/autopublish-changesets-action@v0.0.11
+      #   with:
+      #     commitMessage: "build(release): v${{env.NEW_VERSION}}"
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # - name: Check for changesets
       #   id: release-changesets
