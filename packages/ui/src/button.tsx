@@ -21,7 +21,7 @@ export function Button({ text, onClick }: ButtonProps) {
 
 const styles = StyleSheet.create({
   button: {
-    maxWidth: 210,
+    maxWidth: 200,
     textAlign: "center",
     borderRadius: 12,
     paddingTop: 14,
