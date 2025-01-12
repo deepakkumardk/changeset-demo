@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.6
+
+### Patch Changes
+
+- [#16](https://github.com/deepakkumardk/changeset-demo/pull/16) [`803a95f`](https://github.com/deepakkumardk/changeset-demo/commit/803a95fe07a5416b97e862b8940aa1ed3e708cfb) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style max width
+
 ## 0.0.5
 
 ### Patch Changes
