@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.7
+
+### Patch Changes
+
+- [#17](https://github.com/deepakkumardk/changeset-demo/pull/17) [`773c700`](https://github.com/deepakkumardk/changeset-demo/commit/773c7006d6d333aca8bbd8f83d866e48f7e65530) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update Button width
+
 ## 0.0.6
 
 ### Patch Changes
