@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- [`bc2604f`](https://github.com/deepakkumardk/changeset-demo/commit/bc2604f973e6c5a9c5b717973ae68ef23e82914e) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update bg color
+
 ## 0.0.7
 
 ### Patch Changes
