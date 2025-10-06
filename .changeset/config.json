@@ -1,16 +1,20 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
-  "changelogs": "@changesets/cli/changelog",
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "deepakkumardk/changeset-demo"
+      "repo": "deepakkumardk/changeset-demo",
+      "releaseTypes": {
+        "major": "💥 Breaking Changes",
+        "minor": "✨ New Features",
+        "patch": "🐛 Bug Fixes"
+      }
     }
   ],
   "commit": false,
   "linked": [],
   "access": "public",
-  "baseBranch": "main",
+  "baseBranch": "dev",
   "updateInternalDependencies": "patch",
   "ignore": ["native", "web"]
 }

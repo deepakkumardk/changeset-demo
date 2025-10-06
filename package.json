@@ -9,6 +9,7 @@
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
+    "changeset": "changeset",
     "version-packages": "changeset version",
     "publish-packages": "yarn build && changeset publish"
   },
