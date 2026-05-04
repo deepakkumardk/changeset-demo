@@ -13,45 +13,27 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
       pull-requests: write
-      packages: write
-
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # required for changelog PR links
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js 18
-        uses: actions/setup-node@v3
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 20
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn
 
-      - name: Update .npmrc
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Capture New Release Version
-        run: |
-          yarn changeset status --output=release.json
-          echo "NEW_VERSION=$(jq -r '.releases[0].newVersion' release.json)" >> "$GITHUB_ENV"
-          rm release.json
-
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
         with:
           version: yarn version-packages
-          publish: yarn publish-packages
-          title: "v${{ env.NEW_VERSION }} Release [ci]"
-          commit: "build(release): v${{ env.NEW_VERSION }}"
-          createGithubReleases: true
+          publish: yarn changeset publish --provenance
+          commit: "build(release): version packages"
+          title: "build(release): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
