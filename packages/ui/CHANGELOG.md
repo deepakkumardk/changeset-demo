@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.11
+
+### Patch Changes
+
+- [#23](https://github.com/deepakkumardk/changeset-demo/pull/23) [`fa40e12`](https://github.com/deepakkumardk/changeset-demo/commit/fa40e120036264d67cd115399a1ee2e27ea2ab3f) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update style of button
+
 ## 0.0.10
 
 ### Patch Changes
