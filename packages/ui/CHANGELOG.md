@@ -1,5 +1,17 @@
 # @repo/ui
 
+## 0.0.9
+
+### Patch Changes
+
+- [`6063583`](https://github.com/deepakkumardk/changeset-demo/commit/60635832309ed556d7483b6c580608160775e803) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+## 0.0.8
+
+### Patch Changes
+
+- [`bc2604f`](https://github.com/deepakkumardk/changeset-demo/commit/bc2604f973e6c5a9c5b717973ae68ef23e82914e) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update bg color
+
 ## 0.0.7
 
 ### Patch Changes
