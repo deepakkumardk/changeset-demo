@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     fontSize: 16,
     fontWeight: "600",
-    backgroundColor: "blue",
+    backgroundColor: "gray",
   },
   text: {
     color: "white",
