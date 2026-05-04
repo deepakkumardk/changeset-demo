@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.10
+
+### Patch Changes
+
+- [#20](https://github.com/deepakkumardk/changeset-demo/pull/20) [`061eb72`](https://github.com/deepakkumardk/changeset-demo/commit/061eb72035a4a3ce9d8a6eacab999b142ac3f451) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - v0.0.9 release
+
 ## 0.0.9
 
 ### Patch Changes
