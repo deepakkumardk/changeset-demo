@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.0.9
+
+### Patch Changes
+
+- [`6063583`](https://github.com/deepakkumardk/changeset-demo/commit/60635832309ed556d7483b6c580608160775e803) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
 ## 0.0.8
 
 ### Patch Changes
