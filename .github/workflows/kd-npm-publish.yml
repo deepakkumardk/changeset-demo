@@ -51,10 +51,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Sync version with Release Tag
-        run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          npm version $VERSION --no-git-tag-version --allow-same-version
+      # - name: Sync version with Release Tag
+      #   run: |
+      #     VERSION=${GITHUB_REF_NAME#v}
+      #     npm version $VERSION --no-git-tag-version --allow-same-version
 
       - name: Update or Create CHANGELOG.md
         env:
