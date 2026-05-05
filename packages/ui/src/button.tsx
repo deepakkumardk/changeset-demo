@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "400",
     backgroundColor: "gray",
   },
   text: {
