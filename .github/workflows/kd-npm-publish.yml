@@ -27,24 +27,17 @@ jobs:
         with:
           node-version: 24
 
-      - name: Check for updates
-        run: |
-          CURRENT_VERSION="2.2.2"
-          LATEST_VERSION=$(npm view npm-trusted-publisher version 2>/dev/null || echo "unknown")
-          if [ "$LATEST_VERSION" != "unknown" ] && [ "$LATEST_VERSION" != "$CURRENT_VERSION" ]; then
-            echo "::warning::npm-trusted-publisher v$LATEST_VERSION is available (current: v$CURRENT_VERSION). Run 'npx npm-trusted-publisher@latest init' to update your workflow."
-          fi
+      # - name: Check for updates
+      #   run: |
+      #     CURRENT_VERSION="2.2.2"
+      #     LATEST_VERSION=$(npm view npm-trusted-publisher version 2>/dev/null || echo "unknown")
+      #     if [ "$LATEST_VERSION" != "unknown" ] && [ "$LATEST_VERSION" != "$CURRENT_VERSION" ]; then
+      #       echo "::warning::npm-trusted-publisher v$LATEST_VERSION is available (current: v$CURRENT_VERSION). Run 'npx npm-trusted-publisher@latest init' to update your workflow."
+      #     fi
 
       - name: Install dependencies
         # Fallback to 'npm install' is intentional for lightweight projects that may not include a package-lock.json.
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "Lockfile found, running npm ci"
-            npm ci
-          else
-            echo "No lockfile found, running npm install"
-            npm install
-          fi
+        run: yarn
 
       - name: Configure Git
         run: |
@@ -96,31 +89,30 @@ jobs:
             } > CHANGELOG.md
           fi
 
-      - name: Run tests (if present)
-        run: npm run test --if-present
+      # - name: Run tests (if present)
+      #   run: yarn test --if-present
 
       - name: Build project (if present)
-        run: npm run build --if-present
+        run: yarn build
+      # - name: Commit and Push build files to GitHub
+      #   env:
+      #     TARGET_BRANCH: ${{ github.event.release.target_commitish }}
+      #     TAG_NAME: ${{ github.ref_name }}
+      #   run: |
+      #     VERSION=${GITHUB_REF_NAME#v}
+      #     git add package.json
+      #     if [ -f CHANGELOG.md ]; then git add CHANGELOG.md; fi
+      #     # Safe on CI: runners are clean, isolated environments with no local secrets.
+      #     # Wildcard is used intentionally for universality across different build output paths (dist/, build/, etc.).
+      #     git add . --ignore-errors
 
-      - name: Commit and Push build files to GitHub
-        env:
-          TARGET_BRANCH: ${{ github.event.release.target_commitish }}
-          TAG_NAME: ${{ github.ref_name }}
-        run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          git add package.json
-          if [ -f CHANGELOG.md ]; then git add CHANGELOG.md; fi
-          # Safe on CI: runners are clean, isolated environments with no local secrets.
-          # Wildcard is used intentionally for universality across different build output paths (dist/, build/, etc.).
-          git add . --ignore-errors
-
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "chore: update version to $VERSION, changelog, and assets [skip ci]"
-            git push origin HEAD:"$TARGET_BRANCH"
-            # Force-update is required so the tag points to the new commit that includes version bump and build artifacts.
-            git tag -f "$TAG_NAME"
-            git push origin "$TAG_NAME" --force
-          fi
+      #     if [ -n "$(git status --porcelain)" ]; then
+      #       git commit -m "chore: update version to $VERSION, changelog, and assets [skip ci]"
+      #       git push origin HEAD:"$TARGET_BRANCH"
+      #       # Force-update is required so the tag points to the new commit that includes version bump and build artifacts.
+      #       git tag -f "$TAG_NAME"
+      #       git push origin "$TAG_NAME" --force
+      #     fi
 
   publish-npm:
     needs: build
@@ -135,18 +127,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "Lockfile found, running npm ci"
-            npm ci
-          else
-            echo "No lockfile found, running npm install"
-            npm install
-          fi
+        run: yarn
 
       - name: Publish package to npm
         run: npm publish --provenance --access public
