@@ -14,7 +14,7 @@
   "commit": false,
   "linked": [],
   "access": "public",
-  "baseBranch": "dev",
+  "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": ["native", "web"]
 }
