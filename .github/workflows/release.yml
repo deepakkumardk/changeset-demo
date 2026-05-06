@@ -5,8 +5,6 @@ on:
     branches:
       - mains
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 jobs:
   release:
     name: Release
@@ -17,12 +15,12 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install Dependencies
         run: yarn
@@ -32,7 +30,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: yarn version-packages
-          publish: yarn changeset publish --provenance
+          publish: yarn changeset publish
           commit: "build(release): version packages"
           title: "build(release): version packages"
         env:

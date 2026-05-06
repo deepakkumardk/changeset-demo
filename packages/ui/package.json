@@ -8,6 +8,10 @@
     "dev": "tsup --watch",
     "clean": "rm -rf dist"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "devDependencies": {
     "@repo/typescript-config": "*",
     "@types/react": "^18.2.46",
