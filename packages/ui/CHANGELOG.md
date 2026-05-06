@@ -1,5 +1,21 @@
 # @repo/ui
 
+## 0.0.12
+
+### Patch Changes
+
+- [#27](https://github.com/deepakkumardk/changeset-demo/pull/27) [`7f6e2de`](https://github.com/deepakkumardk/changeset-demo/commit/7f6e2def45ba082d4f8bed0c5fac53bf6adfa904) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+- [#25](https://github.com/deepakkumardk/changeset-demo/pull/25) [`2538c24`](https://github.com/deepakkumardk/changeset-demo/commit/2538c24a7be81aa102ba495e23d2a8f7238e4e3a) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update style of button
+
+- [#29](https://github.com/deepakkumardk/changeset-demo/pull/29) [`6ae09d0`](https://github.com/deepakkumardk/changeset-demo/commit/6ae09d046db382f1e8be6b88042bc4aa530787ec) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+- [#25](https://github.com/deepakkumardk/changeset-demo/pull/25) [`2538c24`](https://github.com/deepakkumardk/changeset-demo/commit/2538c24a7be81aa102ba495e23d2a8f7238e4e3a) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - button font weight chagnes
+
+- [#26](https://github.com/deepakkumardk/changeset-demo/pull/26) [`0c98c41`](https://github.com/deepakkumardk/changeset-demo/commit/0c98c4161a027b82a58b3273845604c39661880e) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button size
+
+- [#28](https://github.com/deepakkumardk/changeset-demo/pull/28) [`f51197c`](https://github.com/deepakkumardk/changeset-demo/commit/f51197cf947ac62141c2c61ba4eac45ef85aa5b5) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button text style
+
 ## 0.0.11
 
 ### Patch Changes
