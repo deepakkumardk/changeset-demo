@@ -1,5 +1,21 @@
 # @repo/ui
 
+## 0.0.14
+
+### Patch Changes
+
+- [#35](https://github.com/deepakkumardk/changeset-demo/pull/35) [`c8a804e`](https://github.com/deepakkumardk/changeset-demo/commit/c8a804e00980400ea67ef075481d49b5fcac3f2c) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button text color
+
+- [#36](https://github.com/deepakkumardk/changeset-demo/pull/36) [`5f9d9ef`](https://github.com/deepakkumardk/changeset-demo/commit/5f9d9ef2f4933958c49f7d3045a204f71f124ea9) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button styles
+
+- [#33](https://github.com/deepakkumardk/changeset-demo/pull/33) [`38a88cd`](https://github.com/deepakkumardk/changeset-demo/commit/38a88cdf84aab8fc092566f5c38d9dd20c0bbd13) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style text color
+
+- [#29](https://github.com/deepakkumardk/changeset-demo/pull/29) [`a21ef5d`](https://github.com/deepakkumardk/changeset-demo/commit/a21ef5db8cf66150849541e5b4ea8a1f856df35e) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+- [#31](https://github.com/deepakkumardk/changeset-demo/pull/31) [`c47f920`](https://github.com/deepakkumardk/changeset-demo/commit/c47f920b69e0d73dcece9e7968b7a19a773b1ab7) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+- [#34](https://github.com/deepakkumardk/changeset-demo/pull/34) [`db8229a`](https://github.com/deepakkumardk/changeset-demo/commit/db8229a7bf97fbb273ab5fa02bb04eef58277df0) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button test styles
+
 ## 0.0.13
 
 ### Patch Changes
