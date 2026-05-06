@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
     backgroundColor: "gray",
   },
   text: {
-    color: "blue",
+    color: "red",
   },
 });
