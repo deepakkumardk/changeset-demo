@@ -18,12 +18,26 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Node.js 24
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 24
 
       - name: Install Dependencies
         run: yarn
+
+      - name: Updating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Capture New Release Version
+        run: |
+          yarn changeset status --output=release.json
+          echo "NEW_VERSION=$(jq -r '.releases[0].newVersion' release.json)" >> "$GITHUB_ENV"
+          rm release.json
 
       - name: Create Release Pull Request or Publish
         id: changesets
@@ -31,7 +45,8 @@ jobs:
         with:
           version: yarn version-packages
           publish: yarn changeset publish
-          commit: "build(release): version packages"
-          title: "build(release): version packages"
+          # Update with version and publish commit message and PR title
+          commit: "build(release): v${{env.NEW_VERSION}}"
+          title: "build(release): v${{env.NEW_VERSION}}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
