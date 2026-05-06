@@ -3,6 +3,10 @@
   "version": "0.0.12",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepakkumardk/changeset-demo.git"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
