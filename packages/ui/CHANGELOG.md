@@ -1,5 +1,13 @@
 # @repo/ui
 
+## 0.0.16
+
+### Patch Changes
+
+- [#40](https://github.com/deepakkumardk/changeset-demo/pull/40) [`5d90c91`](https://github.com/deepakkumardk/changeset-demo/commit/5d90c91ac080be700c9b319dda764b0ae777211d) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
+- [#41](https://github.com/deepakkumardk/changeset-demo/pull/41) [`b6ab509`](https://github.com/deepakkumardk/changeset-demo/commit/b6ab5091d6dbd7e2377ee135556a4fb346ad4e22) Thanks [@deepakkumardk](https://github.com/deepakkumardk)! - Update button style
+
 ## 0.0.15
 
 ### Patch Changes
