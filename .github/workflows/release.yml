@@ -28,17 +28,9 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Updating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Capture New Release Version
         run: |
-          yarn changeset status --output=release.json
+          yarn changeset status --since origin/main --output=release.json
           echo "NEW_VERSION=$(jq -r '.releases[0].newVersion' release.json)" >> "$GITHUB_ENV"
           rm release.json
 
